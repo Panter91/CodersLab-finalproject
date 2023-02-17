@@ -7,7 +7,6 @@ import pl.coderslab.finalproject.dto.MatchDTO;
 import pl.coderslab.finalproject.entity.Match;
 import pl.coderslab.finalproject.entity.Team;
 import pl.coderslab.finalproject.entity.TeamSummary;
-import pl.coderslab.finalproject.mapper.EntityMatchMapper;
 import pl.coderslab.finalproject.mapper.MatchMapper;
 import pl.coderslab.finalproject.repository.MatchRepository;
 import pl.coderslab.finalproject.repository.TeamRepository;
@@ -22,13 +21,11 @@ public class MatchService {
 
     private final MatchRepository matchRepository;
     private final TeamRepository teamRepository;
-    private final EntityMatchMapper entityMatchMapper;
 
     @Autowired
-    public MatchService(MatchRepository matchRepository, TeamRepository teamRepository, EntityMatchMapper entityMatchMapper) {
+    public MatchService(MatchRepository matchRepository, TeamRepository teamRepository) {
         this.matchRepository = matchRepository;
         this.teamRepository = teamRepository;
-        this.entityMatchMapper = entityMatchMapper;
     }
 
     public Map<Integer,List<MatchDTO>> findAllByFinished(boolean finished) {

@@ -1,8 +1,6 @@
 package pl.coderslab.finalproject.mapper;
 
-import pl.coderslab.finalproject.dto.TeamDTO;
 import pl.coderslab.finalproject.dto.TeamSummaryDTO;
-import pl.coderslab.finalproject.entity.Team;
 import pl.coderslab.finalproject.entity.TeamSummary;
 
 public class TeamSummaryMapper {

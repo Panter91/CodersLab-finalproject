@@ -1,9 +1,6 @@
 package pl.coderslab.finalproject.dto;
 
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import lombok.Data;
-import pl.coderslab.finalproject.entity.Team;
 
 import java.time.LocalDate;
 @Data

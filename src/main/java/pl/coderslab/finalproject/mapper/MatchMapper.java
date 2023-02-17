@@ -1,9 +1,7 @@
 package pl.coderslab.finalproject.mapper;
 
 import pl.coderslab.finalproject.dto.MatchDTO;
-import pl.coderslab.finalproject.dto.TeamDTO;
 import pl.coderslab.finalproject.entity.Match;
-import pl.coderslab.finalproject.entity.Team;
 
 public class MatchMapper {
 

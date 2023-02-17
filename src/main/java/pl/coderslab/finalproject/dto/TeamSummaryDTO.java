@@ -1,7 +1,6 @@
 package pl.coderslab.finalproject.dto;
 
 import lombok.Data;
-import pl.coderslab.finalproject.entity.Team;
 
 
 @Data
