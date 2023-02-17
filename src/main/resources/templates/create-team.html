@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:object="${newTeam}" method="post">
+    <p>Nazwa drużyny: <input type ="text" th:field="*{name}"></p>
+    <p>Data założenia: <input type ="date" th:field="*{foundationDate}"></p>
+    <p>Miasto: <input type ="text" th:field="*{city}"></p>
+    <button type="submit">Dodaj drużynę</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Strona startowa</title>
+</head>
+<body>
+<p>Witam na stronie startowej prostej aplikacji symulującej serwis piłkarski.</p>
+<p>Funkcjonalności użyte w tej aplikacji zawierają:</p>
+<ul>
+    <li>dodawanie dryżyny</li>
+    <li>generowanie terminarza spotkań dla dodanych drużyn</li>
+    <li>formularz umożliwiający podanie wyników</li>
+    <li>tabela generowana na podstawie wpisanych wyników</li>
+</ul>
+<p>Zapraszam do wypróbowania i komentowania :)</p>
+
+<a th:href="@{/team/create-team}">Dodaj drużynę</a>
+<br>
+<form method="POST" th:action="@{/match/generate}">
+    <button type="submit" name="submit" value="value" class="link-button">To jest przycisk do generacji terminarzu</button>
+</form>
+<br>
+<a th:href="@{/match/list?finished=false}">Terminarz</a>
+<br>
+<a th:href="@{/match/list?finished=true}">Mecze zakończone</a>
+<br>
+<a th:href="@{/summary/table}">Tabela</a>
+</body>
+</html>

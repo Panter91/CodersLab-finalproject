@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:object="${match}" method="post">
+    <input type ="number" name="id" th:value="*{id}" hidden >
+    <p>Gospodarz: <input type ="text" th:value="*{hostTeamName}" disabled ></p>
+    <p>Bramki gospodarzy: <input type ="number" name="hostTeamGoals" th:value="*{hostTeamGoals}" ></p>
+    <span> - </span>
+    <p>Bramki gości: <input type ="number"name="awayTeamGoals" th:value="*{awayTeamGoals}" ></p>
+    <p>Gośc: <input type ="text" th:field="*{awayTeamName}" disabled ></p>
+
+    <button type="submit">Zatwierdź wynik</button>
+</form>
+
+
+</body>
+</html>

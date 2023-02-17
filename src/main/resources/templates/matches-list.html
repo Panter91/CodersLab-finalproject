@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<tr th:each="item: ${matches}">
+    <td th:text="'Kolejka ' + ${item.key}"/>
+    <table>
+        <tr th:each="match : ${item.value}">
+            <td style="width: 150px" th:text="${match.hostTeamName}"/>
+            <td><span> - </span></td>
+            <td style="width: 150px" th:text="${match.awayTeamName}"/>
+            <td><a th:href="@{/match/match-update/{id}(id = ${match.id}) }">Edit</a></td>
+        </tr>
+    </table>
+    <br>
+</tr>
+</body>
+</html>
+
+<!--<tr th:each="match: ${matches}">-->
+<!--    <div style="display: block">-->
+<!--        <td th:text="${match.hostTeamName}" />-->
+<!--        <span> - </span>-->
+<!--        <td th:text="${match.awayTeamName}" />-->
+<!--        <a th:href="@{/match/match-update/{id}(id = ${match.id}) }">Edit</a>-->
+<!--    </div>-->
+<!--</tr>-->

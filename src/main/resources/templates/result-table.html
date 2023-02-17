@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/styles/main.css}" rel="stylesheet" />
+</head>
+<body>
+
+
+<table>
+    <tr>
+        <th>Lp.</th> <th>Drużyna</th> <th>Z</th> <th>R</th> <th>P</th> <th>Bz</th> <th>Bs</th> <th>+/-</th> <th>Pkt.</th>
+    </tr>
+    <tr th:each="teamsummary,iterator: ${teamsummaries}">
+        <div style="display: block">
+            <td th:text="${iterator.index + 1}"></td>
+            <td th:text="${teamsummary.team}" />
+            <td th:text="${teamsummary.wins}" />
+            <td th:text="${teamsummary.draws}" />
+            <td th:text="${teamsummary.losses}" />
+            <td th:text="${teamsummary.goalsScored}" />
+            <td th:text="${teamsummary.goalsConceded}" />
+            <td th:text="${teamsummary.goalDifference}" />
+            <td th:text="${teamsummary.points}" />
+        </div>
+    </tr>
+</table>
+
+</body>
+</html>

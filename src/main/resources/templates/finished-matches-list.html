@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<tr th:each="item: ${matches}">
+    <td th:text="'Kolejka ' + ${item.key}"/>
+    <table>
+        <tr th:each="match : ${item.value}">
+            <td style="width: 150px" th:text="${match.hostTeamName}"/>
+            <td th:text="${match.hostTeamGoals}" />
+            <td><span> - </span></td>
+            <td th:text="${match.awayTeamGoals}" />
+            <td style="width: 150px" th:text="${match.awayTeamName}"/>
+        </tr>
+    </table>
+    <br>
+</tr>
+</body>
+</html>
+
