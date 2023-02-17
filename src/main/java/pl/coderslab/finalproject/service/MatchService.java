@@ -4,21 +4,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pl.coderslab.finalproject.dto.MatchDTO;
-import pl.coderslab.finalproject.dto.MatchResultDTO;
-import pl.coderslab.finalproject.dto.TeamDTO;
 import pl.coderslab.finalproject.entity.Match;
 import pl.coderslab.finalproject.entity.Team;
 import pl.coderslab.finalproject.entity.TeamSummary;
 import pl.coderslab.finalproject.mapper.EntityMatchMapper;
 import pl.coderslab.finalproject.mapper.MatchMapper;
-import pl.coderslab.finalproject.mapper.TeamMapper;
 import pl.coderslab.finalproject.repository.MatchRepository;
 import pl.coderslab.finalproject.repository.TeamRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -41,30 +37,13 @@ public class MatchService {
                 .collect(Collectors.groupingBy(matchDTO -> matchDTO.getMatchdayNumber()));
     }
 
-//    public List<MatchDTO> findAllByFinished(boolean finished) {
-//        return matchRepository.findAllByFinished(finished).stream().map(MatchMapper::toDto).toList();
-//    }
+
     public MatchDTO findMatchById(Long id) {
         return matchRepository.findById(id).map(MatchMapper::toDto).orElseThrow();
     }
 
-    public int saveMatch(MatchDTO matchDTO){
-
-        Long id = matchDTO.getId();
-        Match match = matchRepository.findById(id).get();
-        if(match.isFinished()){
-            return -1;
-        }
-        match.setHostTeamGoals(matchDTO.getHostTeamGoals());
-        match.setAwayTeamGoals(matchDTO.getAwayTeamGoals());
-        match.setFinished(true);
-        matchRepository.save(match);
-        return 1;
-//        matchRepository.save(entityMatchMapper.toEntity(matchDTO));
-    }
-
     @Transactional
-    public void updateresult(MatchDTO matchDTO) {
+    public void updateResult(MatchDTO matchDTO) {
 
         matchRepository.findById(matchDTO.getId()).ifPresent(match -> {
             if (!match.isFinished()){

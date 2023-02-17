@@ -11,6 +11,7 @@ import pl.coderslab.finalproject.mapper.TeamMapper;
 import pl.coderslab.finalproject.repository.TeamRepository;
 import pl.coderslab.finalproject.repository.TeamSummaryRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -27,6 +28,10 @@ public class TeamService {
 
     public Optional<TeamDTO> get(Long id) {
         return teamRepository.findById(id).map(TeamMapper::toDto);
+    }
+
+    public List<Team> findAll(){
+        return teamRepository.findAll();
     }
 
     @Transactional

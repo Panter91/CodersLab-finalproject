@@ -5,6 +5,9 @@
     <title>Title</title>
 </head>
 <body>
+<p><a th:href="@{/home-page}">Powrót do menu głównego</a></p>
+<p><a th:href="@{/match/list?finished=false}">Mecze do rozegrania</a></p>
+<p><a th:href="@{/summary/table}">Aktualna tabela</a></p>
 <tr th:each="item: ${matches}">
     <td th:text="'Kolejka ' + ${item.key}"/>
     <table>

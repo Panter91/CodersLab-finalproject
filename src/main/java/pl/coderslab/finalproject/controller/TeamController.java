@@ -32,9 +32,15 @@ public class TeamController {
         return "create-team";
     }
 
+    @GetMapping("/list")
+    public String teamList(Model model){
+        model.addAttribute("teamlist", teamService.findAll());
+        return "list-of-teams";
+    }
+
     @PostMapping("/create-team")
     public String addTeam(@ModelAttribute TeamDTO teamDTO) {
         teamService.save(teamDTO);
-        return "redirect:/home-page";
+        return "redirect:/team/list";
     }
 }

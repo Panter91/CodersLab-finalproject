@@ -18,8 +18,10 @@
 <a th:href="@{/team/create-team}">Dodaj drużynę</a>
 <br>
 <form method="POST" th:action="@{/match/generate}">
-    <button type="submit" name="submit" value="value" class="link-button">To jest przycisk do generacji terminarzu</button>
+    <button type="submit" name="submit" value="value" class="link-button">Generuj terminarz</button>
 </form>
+<br>
+<a th:href="@{/team/list}">Dodane drużyny</a>
 <br>
 <a th:href="@{/match/list?finished=false}">Terminarz</a>
 <br>

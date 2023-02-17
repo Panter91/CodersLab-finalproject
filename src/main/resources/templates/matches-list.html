@@ -5,6 +5,9 @@
     <title>Title</title>
 </head>
 <body>
+<p><a th:href="@{/home-page}">Powrót do menu głównego</a></p>
+<p><a th:href="@{/match/list?finished=true}">Mecze zakończone</a></p>
+<p><a th:href="@{/summary/table}">Aktualna tabela</a></p>
 <tr th:each="item: ${matches}">
     <td th:text="'Kolejka ' + ${item.key}"/>
     <table>
@@ -19,12 +22,3 @@
 </tr>
 </body>
 </html>
-
-<!--<tr th:each="match: ${matches}">-->
-<!--    <div style="display: block">-->
-<!--        <td th:text="${match.hostTeamName}" />-->
-<!--        <span> - </span>-->
-<!--        <td th:text="${match.awayTeamName}" />-->
-<!--        <a th:href="@{/match/match-update/{id}(id = ${match.id}) }">Edit</a>-->
-<!--    </div>-->
-<!--</tr>-->

@@ -5,6 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-
+<p>Drużyny dodane do rozgrywek:</p>
+<tr th:each="team: ${teamlist}">
+    <p><td th:text="${team.name}" /></p>
+</tr>
+<p><a th:href="@{/home-page}">Powrót do menu głównego</a></p>
 </body>
 </html>
