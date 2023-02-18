@@ -34,7 +34,6 @@ public class MatchService {
                 .collect(Collectors.groupingBy(matchDTO -> matchDTO.getMatchdayNumber()));
     }
 
-
     public MatchDTO findMatchById(Long id) {
         return matchRepository.findById(id).map(MatchMapper::toDto).orElseThrow();
     }
@@ -65,7 +64,9 @@ public class MatchService {
                     hometeam.setLosses(hometeam.getLosses()+ 1);
                 } else {
                     hometeam.setDraws(hometeam.getDraws() + 1);
+                    hometeam.setPoints(hometeam.getPoints() + 1);
                     awayteam.setDraws(awayteam.getDraws() + 1);
+                    awayteam.setPoints(awayteam.getPoints() + 1);
                 }
                 match.setFinished(true);
 
