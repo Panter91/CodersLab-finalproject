@@ -8,6 +8,7 @@ import org.hibernate.annotations.LazyToOneOption;
 import org.springframework.lang.NonNull;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -36,4 +37,6 @@ public class Team {
     @OneToMany(mappedBy = "awayTeam")
     private Set<Match> awayMatches;
 
+    @OneToMany(mappedBy = "team")
+    private List<Player> players;
 }
